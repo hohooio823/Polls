@@ -1,0 +1,71 @@
+@import '../global';
+
+.static {
+  pointer-events: none!important;
+}
+
+.btn-check {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+
+.poll-display {
+  @include radius36;
+  border: 2px solid;
+  color: $white;
+  height: auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 24px;
+  box-sizing: border-box;
+
+  &--header {
+    position: relative;
+  }
+  &--icon {
+    @include radiusIcon;
+    background-color: #00000033;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 12.73px;
+      height: 12.73px;
+    }
+  }
+  &--title {
+    @include font(20px, 700, 24px);
+    display: block;
+    line-height: 24px;
+    text-align: left;
+    padding-right: 40px;
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+}
+
+.poll-vote {
+  @include buttonBlackWhite;
+  @include font(16px, 700, 20px);
+  width: 100%;
+  padding: 10px;
+}
+
+
+@import './styles/multiple-choice-poll';
+@import './styles/rating-poll';
+@import './styles/range-survey';
+@import './styles/free-text-poll';
+
+// .root {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: self-start;
+// }

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+$white: rgb(255, 255, 255);
+$white80: rgba(255, 255, 255, 0.8);
+$black: rgb(0, 0, 0);
+$mint: rgb(112, 200, 176);
+$blue: rgb(9, 5, 255);
+$yellow: #FF8D07;
+$red: #F13737;
+$dark-gray: #1B1B1B;
+
+@mixin opacityBackgroundColor($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+@mixin radius36 {
+  border-radius: 36px;
+}
+
+@mixin radius28 {
+  border-radius: 28px;
+}
+
+
+@mixin radiusIcon {
+  border-radius: 50%;
+}
+
+@mixin buttonBlackWhite {
+  @include radius36;
+  background-color: transparent;
+  color: $white;
+  border: 1px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+@mixin buttonMint {
+  @include radius36;
+  background-color: $mint;
+  color: $black;
+  border: 1px solid $mint;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+@mixin font($size, $weight, $lh) {
+  font-weight: $weight;
+  font-family: "Manrope";
+  font-size: $size;
+  font-style: normal;
+  line-height: $lh;
+}

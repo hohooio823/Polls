@@ -1,0 +1,100 @@
+.ratings {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row-reverse nowrap;
+
+  & + .poll-vote {
+    margin-top: 25px;
+  }
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  * > path {
+    transition: fill 0.2s, opacity 0.2s ease;
+  }
+}
+.star.selectable:hover,
+.star.selected,
+.star.selectable:hover ~ .star,
+.star.selected ~ .star {
+  * > path {
+    opacity: 1;
+    fill: $yellow;
+  }
+}
+.smile {
+  * > path {
+    opacity: 1;
+ }
+}
+
+.smile.gray:not(.selected) {
+  svg > path {
+    fill: $white;
+    opacity: 0.6;
+ }
+}
+.rating-text {
+  display: flex;
+  margin: 12px 0 16px;
+  justify-content: space-between;
+
+  span {
+    @include font(14px, 400, 16px);
+  }
+  & + .poll-vote {
+    margin-top: 12px;
+  }
+}
+
+.rating-digit {
+  @include font(14px, 400, 16px);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid $white;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, font-weight 0.3s ease;
+
+  &:hover,
+  &_selected {
+    background: $white;
+    color: $black;
+    font-weight: 700;
+  }
+}
+.thumb {
+  width: 137px;
+  text-align: center;
+  padding: 8px;
+  background: rgb(255 255 255 / 10%);
+  border-radius: 28px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 24px;
+  &_active,
+  &:hover {
+    background: $white;
+  }
+  &--wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &.thumb-down {
+    & > svg {
+      transform: scaleX(-1) rotate(180deg);
+    }
+  }
+}

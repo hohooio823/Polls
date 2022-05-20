@@ -1,0 +1,58 @@
+@import '../../_global';
+
+.poll-menu {
+  background-color: $black;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 8px 0;
+  position: absolute;
+  width: 192px;
+  border-radius: 18px;
+  display: none;
+  overflow: hidden;
+  visibility: hidden;
+  right: 0;
+
+  &.show {
+    display: flex;
+    visibility: visible;
+    z-index: 10;
+  }
+
+  &__wrapper {
+    position: relative;
+    float: right;
+  }
+
+  &__toggle-btn {
+    color: $black;
+    width: 36px;
+    height: 28px;
+    background: $white;
+    border-radius: 29px;
+    outline: none!important;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: none;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+    
+  }
+  &__item {
+    @include font(14px, 400, 20px);
+    color: $white;
+    cursor: pointer;
+    padding: 6px 16px;
+    width: 100%;
+
+    &:hover {
+      background-color: $dark-gray;
+    }
+
+    &:last-child {
+      color: $red;
+    }
+    
+  }
+}

@@ -1,0 +1,30 @@
+@mixin rangeThumbScale {
+  @for $i from 10 through 1{
+    &_level#{$i}{
+      &::-webkit-slider-thumb {
+        transform: scale(1 + $i / 10);
+      }
+    }
+  }
+}
+
+.range {
+  background: $white;
+  width: calc(100% - 40px);
+  -webkit-appearance: none;
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  margin: 20px auto 13px;
+  &_thumb {
+    height: 42px;
+    width: 42px;
+    border-radius: 4px;
+    background-color: transparent!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none!important;
+  }
+  @include rangeThumbScale;
+}

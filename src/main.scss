@@ -1,0 +1,40 @@
+@import 'global';
+
+body {
+  background: #1B1B1B;
+  margin: 0;
+  * {
+    box-sizing: border-box;
+  }
+}
+// example code
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  .top-panel {
+    width: 100vw;
+    height: 50px;
+
+  }
+  .page-wrap {
+    width: 100vw;
+    display: flex;
+    .left-panel {
+      width: 272px;
+      min-width: 272px;
+    }
+    .livestream-panel {
+      @include radius36;
+      position: relative;
+      width: calc(100vw - 648px);
+      margin: 20px;
+      min-width: calc(100vw - 648px);
+      background-color: #ffffff;
+      height: 70vh;
+    }
+  }
+}

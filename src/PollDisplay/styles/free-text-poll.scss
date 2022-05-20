@@ -1,0 +1,15 @@
+.poll {
+  &--free-text {
+    @include font(14px, 400, 16px);
+    resize: none;
+    width: 100%;
+    border: 1px solid rgb(255 255 255 / 60%);
+    background: transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: $white;
+    outline: none!important;
+    height: 70px;
+    overflow-y: auto;
+  }
+}
